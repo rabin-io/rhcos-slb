@@ -22,7 +22,7 @@ build_custom_config() {
 	# Paste the content into custom-config.fcc
 	envsubst \$base64_capture_macs_script_content,\$base64_create_datastore_script_content <  custom-config.fcc.tmpl > "${output_fcc}"
 
-  docker run -i --rm quay.io/coreos/butane:release --pretty < "${output_fcc}" > "${output_ign}"
+  podman run -i --rm quay.io/coreos/butane:release --pretty < "${output_fcc}" > "${output_ign}"
 }
 
 build_mco() {
